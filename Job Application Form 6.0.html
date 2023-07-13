@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Job Application Form</title>
+	<link rel="shortcut icon" type="x-icon" href="hotbean.png">
+</head>
+	<link href="Jobby 2.0.css" rel="stylesheet" type="text/css">
+<body>
+  <!-- Main Container -->
+  <div class="container">
+    <h1>Job Application</h1>
+    <form action="submit.php" method="post" enctype="multipart/form-data">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" required>
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone" required>
+      <label for="resume">Upload Resume (optional):</label>
+      <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" size="5000000">
+      <input type="submit" value="Submit">
+    </form>
+    <p id="submission-text" style="display: none; margin-top: 10px; color: #4CAF50;">Thank you for applying!</p>
+    <div class="back-button">
+      	<a href="Job Application.html"><u>Go Back</u></a>
+    </div>
+  </div>
+
+  <script>
+    document.querySelector('form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      document.getElementById('submission-text').style.display = 'block';
+    });
+  </script>
+</body>
+</html>
